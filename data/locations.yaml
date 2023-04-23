@@ -1,0 +1,77 @@
+---
+villages:
+  - name: "Boat"
+    coords:
+      x: 2358
+      y: 62
+      z: 1014
+  - name: "Deep Dark Biome"
+    coords:
+      x: 190
+      y: -21
+      z: -1229
+  - name: "Forest Village 1"
+    coords: 
+      x: -1075
+      y: 63
+      z: -868
+  - name: "Forest Village 2"
+    coords:
+      x: 160
+      y: 70
+      z: -435
+  - name: "Ice Village 2"
+    coords:
+      x: -773
+      y: 63
+      z: -434
+  - name: "Ice Village 4"
+    coords:
+      x: -674
+      y: 95
+      z: -1353
+  - name: "Land Village 3"
+    coords:
+      x: 692
+      y: 66
+      z: -2090
+  - name: "Lava"
+    coords:
+      x: 2640
+      y: 67
+      z: 1293
+  - name: "Luckiest Land Village 2"
+    coords:
+      x: 380
+      y: 72
+      z: -1775
+  - name: "Mountain Camp 2"
+    coords:
+      x: -71
+      y: 121
+      z: -1529
+  - name: "Normal Land Village"
+    coords:
+      x: 27
+      y: 70
+      z: -911
+  - name: "Sand Village"
+    coords:
+      x: 2822
+      y: 63
+      z: 1233
+  - name: "Sand Village 2"
+    coords:
+      x: 3031
+      y: 64
+      z: 591
+  - name: "Snow Village"
+    coords:
+      x: -202
+      y: 63
+      z: 36
+  - name: "Snowland Village"
+    coords:
+      x: 28
+      y: 70
+      z: -846
