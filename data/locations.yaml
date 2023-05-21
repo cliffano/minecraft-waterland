@@ -25,16 +25,21 @@ villages:
       x: -773
       y: 63
       z: -434
-  - name: "Ice Village 4"
-    coords:
-      x: -674
-      y: 95
-      z: -1353
   - name: "Land Village 3"
     coords:
       x: 692
       y: 66
       z: -2090
+  - name: "Ice Village 4"
+    coords:
+      x: -674
+      y: 95
+      z: -1353
+  - name: "Ice Village 5"
+    coords:
+      x: 324
+      y: 75
+      z: 661
   - name: "Lava"
     coords:
       x: 2640
