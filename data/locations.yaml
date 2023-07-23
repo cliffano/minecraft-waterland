@@ -80,3 +80,8 @@ villages:
       x: 28
       y: 70
       z: -846
+  - name: "Tiny Hut"
+    coords:
+      x: 824
+      y: 80
+      z: -509
