@@ -1,6 +1,11 @@
 ---
 villages:
-  - name: "Boat"
+  - name: "Amethyst Fort"
+    coords:
+      x: -50
+      y: -22
+      z: 1115
+  - name: "Boat We Forgot"
     coords:
       x: 2358
       y: 62
@@ -20,6 +25,11 @@ villages:
       x: 160
       y: 70
       z: -435
+  - name: "Glowberry Cave Village"
+    coords:
+      x: -374
+      y: 63
+      z: 1343
   - name: "Ice Village 2"
     coords:
       x: -773
@@ -85,3 +95,8 @@ villages:
       x: 824
       y: 80
       z: -509
+  - name: "Underground Camp"
+    coords:
+      x: -54
+      y: 15
+      z: 962
