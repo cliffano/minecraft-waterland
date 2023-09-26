@@ -95,6 +95,11 @@ villages:
       x: 824
       y: 80
       z: -509
+  - name: "The Oasis"
+    coords:
+      x: 1925
+      y: 65
+      z: 105
   - name: "Underground Camp"
     coords:
       x: -54
