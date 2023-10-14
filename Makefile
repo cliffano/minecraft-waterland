@@ -18,8 +18,8 @@ respacks-package: stage
 	mkdir -p stage/skins-mapped/
 	cp skins/ranger.png stage/skins-mapped/sunny.png
 	cp skins/king-kakashi-gladiators.png stage/skins-mapped/kai.png
-	cp skins/golom-butler.png stage/skins-mapped/noor.png
-	cp skins/astronaut-2.png stage/skins-mapped/alex.png
+	cp skins/old-knight-soren.png stage/skins-mapped/noor.png
+	cp skins/the-loyal.png stage/skins-mapped/alex.png
 	cp skins/husar-peasant.png stage/skins-mapped/ari.png
 	cp skins/husar-peasant.png stage/skins-mapped/efe.png
 	cp skins/husar-peasant.png stage/skins-mapped/makena.png
