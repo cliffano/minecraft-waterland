@@ -10,6 +10,11 @@ villages:
       x: 2358
       y: 62
       z: 1014
+  - name: "Castle Neverwinter"
+    coords:
+      x: -80
+      y: 112
+      z: -1529
   - name: "Deep Dark Biome"
     coords:
       x: 190
@@ -90,11 +95,21 @@ villages:
       x: 28
       y: 70
       z: -846
+  - name: "Sweetberry Village"
+    coords:
+      x: -185
+      y: 64
+      z: -2470
   - name: "Tiny Hut"
     coords:
       x: 824
       y: 80
       z: -509
+  - name: "The First Lucky Igloo"
+    coords:
+      x: -387
+      y: 63
+      z: -826
   - name: "The Oasis"
     coords:
       x: 1925
