@@ -21,7 +21,7 @@ villages:
       y: -21
       z: -1229
   - name: "Forest Village 1"
-    coords: 
+    coords:
       x: -1075
       y: 63
       z: -868
@@ -35,6 +35,11 @@ villages:
       x: -374
       y: 63
       z: 1343
+  - name: "Hunters Outpost"
+    coords:
+      x: 230
+      y: 63
+      z: -1565
   - name: "Ice Village 2"
     coords:
       x: -773
@@ -45,6 +50,11 @@ villages:
       x: 692
       y: 66
       z: -2090
+  - name: "Mountain Village"
+    coords:
+      x: 340
+      y: 113
+      z: -1386
   - name: "Ice Village 4"
     coords:
       x: -674
@@ -100,6 +110,11 @@ villages:
       x: -185
       y: 64
       z: -2470
+  - name: "Sus Resting Post"
+    coords:
+      x: 122
+      y: 108
+      z: -1228
   - name: "Tiny Hut"
     coords:
       x: 824
