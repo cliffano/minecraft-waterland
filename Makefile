@@ -12,9 +12,9 @@ deps:
 villages-map:
 	python3 scripts/build-3dplot.py
 
-respacks: respacks-package respacks-install-mac
+resource-packs: resource-packs-package resource-packs-install-mac
 
-respacks-package: stage
+resource-packs-package: stage
 	mkdir -p stage/skins-mapped/
 	cp skins/ranger.png stage/skins-mapped/sunny.png
 	cp skins/king-kakashi-gladiators.png stage/skins-mapped/kai.png
@@ -25,15 +25,15 @@ respacks-package: stage
 	cp skins/husar-peasant.png stage/skins-mapped/makena.png
 	cp skins/husar-peasant.png stage/skins-mapped/steve.png
 	cp skins/husar-peasant.png stage/skins-mapped/zuri.png
-	mkdir -p stage/respacks/Waterland/assets/minecraft/textures/entity/player/
-	cd stage/respacks/Waterland/assets/minecraft/textures/entity/player/ && mkdir -p slim/ wide/
-	cp -R stage/skins-mapped/* stage/respacks/Waterland/assets/minecraft/textures/entity/player/slim/
-	cp -R stage/skins-mapped/* stage/respacks/Waterland/assets/minecraft/textures/entity/player/wide/
-	cp -R config/respacks/pack.mcmeta stage/respacks/Waterland/
-	cp -R config/respacks/pack.png stage/respacks/Waterland/
+	mkdir -p stage/resource-packs/Waterland/assets/minecraft/textures/entity/player/
+	cd stage/resource-packs/Waterland/assets/minecraft/textures/entity/player/ && mkdir -p slim/ wide/
+	cp -R stage/skins-mapped/* stage/resource-packs/Waterland/assets/minecraft/textures/entity/player/slim/
+	cp -R stage/skins-mapped/* stage/resource-packs/Waterland/assets/minecraft/textures/entity/player/wide/
+	cp -R config/resource-packs/pack.mcmeta stage/resource-packs/Waterland/
+	cp -R config/resource-packs/pack.png stage/resource-packs/Waterland/
 
-respacks-install-mac:
-	cp -R stage/respacks/Waterland "/Users/$(USER)/Library/Application Support/minecraft/resourcepacks/"
-	
+resource-packs-install-mac:
+	cp -R stage/resource-packs/Waterland "/Users/$(USER)/Library/Application Support/minecraft/resourcepacks/"
 
-.PHONY: ci clean stage deps villages-map respacks respacks-package respacks-install-mac
+
+.PHONY: ci clean stage deps villages-map resource-packs resource-packs-package resource-packs-install-mac
