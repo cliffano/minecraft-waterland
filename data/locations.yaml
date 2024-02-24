@@ -20,6 +20,11 @@ villages:
       x: 190
       y: -21
       z: -1229
+  - name: "Farm Village"
+    coords:
+      x: 1447
+      y: 104
+      z: -789
   - name: "Forest Village 1"
     coords:
       x: -1075
