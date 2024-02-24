@@ -1,4 +1,4 @@
-ci: deps villages-map
+ci: deps villages-map resource-packs-package
 
 clean:
 	rm -rf stage
