@@ -32,4 +32,4 @@ for village in locations['villages']:
         fontsize=5
     )
 
-plt.savefig('maps/villages.png', dpi=500)
+plt.savefig('images/villages-map.png', dpi=500)
