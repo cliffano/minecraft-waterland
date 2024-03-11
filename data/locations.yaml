@@ -90,6 +90,16 @@ villages:
       x: 27
       y: 70
       z: -911
+  - name: "Ocean Outpost 2"
+    coords:
+      x: 1773
+      y: 63
+      z: -879
+  - name: "River Valley Village"
+    coords:
+      x: 1776
+      y: 63
+      z: -1328
   - name: "Sand Village"
     coords:
       x: 2822
