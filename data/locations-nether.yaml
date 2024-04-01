@@ -1,0 +1,7 @@
+---
+villages:
+  - name: "Lava Moat Outpost"
+    coords:
+      x: 234
+      y: 52
+      z: -128

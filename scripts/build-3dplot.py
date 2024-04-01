@@ -3,33 +3,38 @@ import matplotlib.pyplot as plt
 import numpy as np
 import yaml
 
-ax = plt.axes(projection='3d')
+def generate_villages_map(title, data_file, output_file):
 
-ax.set_title('Villages Map')
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Z')
+    ax = plt.axes(projection='3d')
 
-with open('data/locations.yaml') as file:
-    try:
-        locations = yaml.safe_load(file)
-    except yaml.YAMLError as e:
-        print(e)
-        raise
+    ax.set_title(title)
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
 
-for village in locations['villages']:
-    ax.scatter(
-        village['coords']['x'],
-        village['coords']['y'],
-        village['coords']['z'],
-        label=village['name']
-    )
-    ax.text(
-        village['coords']['x'],
-        village['coords']['y'],
-        village['coords']['z'],
-        village['name'],
-        fontsize=5
-    )
+    with open(data_file) as file:
+        try:
+            locations = yaml.safe_load(file)
+        except yaml.YAMLError as e:
+            print(e)
+            raise
 
-plt.savefig('images/villages-map.png', dpi=500)
+    for village in locations['villages']:
+        ax.scatter(
+            village['coords']['x'],
+            village['coords']['y'],
+            village['coords']['z'],
+            label=village['name']
+        )
+        ax.text(
+            village['coords']['x'],
+            village['coords']['y'],
+            village['coords']['z'],
+            village['name'],
+            fontsize=5
+        )
+
+    plt.savefig(output_file, dpi=500)
+
+generate_villages_map('Overworld Villages Map', 'data/locations-overworld.yaml', 'images/villages-map-overworld.png')
+generate_villages_map('Nether Villages Map', 'data/locations-nether.yaml', 'images/villages-map-nether.png')
