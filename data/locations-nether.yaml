@@ -5,3 +5,8 @@ villages:
       x: 234
       y: 52
       z: -128
+  - name: "Rock Fortress"
+    coords:
+      x: 472
+      y: 102
+      z: -396
