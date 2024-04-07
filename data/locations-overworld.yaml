@@ -5,6 +5,11 @@ villages:
       x: -50
       y: -22
       z: 1115
+  - name: "Basecamp 1"
+    coords:
+      x: 3824
+      y: 70
+      z: -3303
   - name: "Boat We Forgot"
     coords:
       x: 2358
@@ -20,6 +25,11 @@ villages:
       x: 190
       y: -21
       z: -1229
+  - name: "Easthaven Camp"
+    coords:
+      x: -15
+      y: 63
+      z: -1678
   - name: "Farm Village"
     coords:
       x: 1447
@@ -130,6 +140,11 @@ villages:
       x: 122
       y: 108
       z: -1228
+  - name: "Tent Town"
+    coords:
+      x: -146
+      y: 63
+      z: -1785
   - name: "Tiny Hut"
     coords:
       x: 824
