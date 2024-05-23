@@ -36,6 +36,7 @@ Server
 
 ### Links
 
-* [https://www.minecraft.net/en-us/download/server] - Download Minecraft server jar
+* [https://www.minecraft.net/en-us/download/server] - Download latest Minecraft server jar
+* [https://gist.github.com/cliffano/77a982a7503669c3e1acb0a0cf6127e9] - Download links for Minecraft server jars across versions
 * [https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html] - Mapping of Java SE version to Class File Format Major version
 * [https://snapcraft.io/install/openjdk/raspbian] - Install OpenJDK on Raspbian
