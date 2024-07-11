@@ -1,4 +1,4 @@
-ci: deps villages-map resource-packs-package
+ci: deps gen-villages-maps resource-packs-package
 
 clean:
 	rm -rf stage
@@ -8,9 +8,6 @@ stage:
 
 deps:
 	pip3 install -r requirements.txt
-
-villages-map:
-	python3 scripts/build-3dplot.py
 
 resource-packs: resource-packs-package resource-packs-install-mac
 
@@ -35,7 +32,10 @@ resource-packs-package: stage
 resource-packs-install-mac:
 	cp -R stage/resource-packs/Waterland "/Users/$(USER)/Library/Application Support/minecraft/resourcepacks/"
 
+gen-villages-maps:
+	python3 scripts/gen-villages-maps.py
+
 gen-versions-list: stage
 	python3 scripts/gen-versions-list.py
 
-.PHONY: ci clean stage deps villages-map resource-packs resource-packs-package resource-packs-install-mac gen-versions-list
+.PHONY: ci clean stage deps gen-villages-maps resource-packs resource-packs-package resource-packs-install-mac gen-versions-list
