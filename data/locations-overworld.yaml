@@ -120,6 +120,11 @@ villages:
       x: 3031
       y: 64
       z: 591
+  - name: "Skycamp"
+    coords:
+      x: -1388
+      y: 85
+      z: -1496
   - name: "Snow Village"
     coords:
       x: -202
@@ -160,6 +165,11 @@ villages:
       x: 1925
       y: 65
       z: 105
+  - name: "Trail Outpost"
+    coords:
+      x: -1352
+      y: 67
+      z: -429
   - name: "Underground Camp"
     coords:
       x: -54
