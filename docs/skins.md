@@ -1,6 +1,8 @@
 Skins
 -----
 
+We overwrite the default player skins with custom skins in order to give each Waterland kingdom character a unique look.
+
 | Default Players | Name | Photo | Source |
 |-----------------|------|-------|--------|
 | sunny | Ranger | TODO | [MinecraftSkins.com](https://www.minecraftskins.com/skin/21475850/ranger/) |

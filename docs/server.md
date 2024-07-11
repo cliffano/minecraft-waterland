@@ -1,9 +1,13 @@
 Server
 ------
 
+We run Minecraft Waterland with Minecraft Java Edition with minimal customisation.
+
 ## Minecraft server software
 
 ### server.properties
+
+We customise the following configuration properties. Everything else is per default.
 
 | Property | Value | Notes |
 |----------|-------|-------|
@@ -31,12 +35,14 @@ Server
 
 ### Utility commands
 
+To upgrade Java version on the server:
+
     sudo update-alternatives --install /etc/alternatives/java snap-openjdk /snap/openjdk/current/jdk/bin/java
     sudo update-alternatives --remove snap-openjdk /snap/openjdk/current/jdk/bin/java
 
 ### Links
 
-* [https://www.minecraft.net/en-us/download/server] - Download latest Minecraft server jar
-* [https://gist.github.com/cliffano/77a982a7503669c3e1acb0a0cf6127e9] - Download links for Minecraft server jars across versions
-* [https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html] - Mapping of Java SE version to Class File Format Major version
-* [https://snapcraft.io/install/openjdk/raspbian] - Install OpenJDK on Raspbian
+* https://www.minecraft.net/en-us/download/server - Download latest Minecraft server jar
+* https://gist.github.com/cliffano/77a982a7503669c3e1acb0a0cf6127e9 - Download links for Minecraft server jars across versions
+* https://docs.oracle.com/javase/specs/jvms/se21/html/jvms-4.html - Mapping of Java SE version to Class File Format Major version
+* https://snapcraft.io/install/openjdk/raspbian - Install OpenJDK on Raspbian
