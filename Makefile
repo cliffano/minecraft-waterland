@@ -35,7 +35,7 @@ resource-packs-package: stage
 resource-packs-install-mac:
 	cp -R stage/resource-packs/Waterland "/Users/$(USER)/Library/Application Support/minecraft/resourcepacks/"
 
-gen-versions-list:
+gen-versions-list: stage
 	python3 scripts/gen-versions-list.py
 
 .PHONY: ci clean stage deps villages-map resource-packs resource-packs-package resource-packs-install-mac gen-versions-list

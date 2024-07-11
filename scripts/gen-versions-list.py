@@ -1,7 +1,15 @@
+# This script creates a Markdown file with a list of Minecraft versions and their server jar download URLs,
+# to be published to https://gist.github.com/cliffano/77a982a7503669c3e1acb0a0cf6127e9
+
+from conflog import Conflog
 import minecraftverse
 from tabulate import tabulate
 
-def generate_versions_data():
+cfl = Conflog(conf_files=['./config/conflog.yaml'])
+logger = cfl.get_logger('gen-versions-list')
+
+def retrieve_versions_data():
+    logger.info('Retrieving versions data...')
 
     data = []
 
@@ -28,12 +36,12 @@ def generate_versions_data():
 
                 try:
 
-                    print(f'Retrieving package info for version {version.id} with package ID {package_id} ...')
+                    logger.info(f'Retrieving package info for version {version.id} with package ID {package_id} ...')
 
                     version_package_info = piston_api.get_minecraft_version_package_info(package_id, version_id)
 
                     if (version_package_info.downloads.server is None):
-                        print(f'No server jar fou  nd for version {version.id} with package ID {package_id}')
+                        logger.error(f'No server jar found for version {version.id} with package ID {package_id}')
                         continue
 
                     data.append({
@@ -42,12 +50,17 @@ def generate_versions_data():
                     })
 
                 except minecraftverse.exceptions.NotFoundException as e:
-                    print(f'Unable to find package info for version {version.id} with package ID {package_id}')
+                    logger.error(f'Unable to find package info for version {version.id} with package ID {package_id}')
 
+    logger.info('Versions data retrieved successfully')
     return data
 
-def render_versions_list(data):
-    print(tabulate(data, headers="keys", tablefmt="pipe"))
+def write_versions_list_markdown_file(data, file_path):
+    logger.info(f'Writing versions list Markdown file at {file_path} ...')
+    versions_list_in_markdown = tabulate(data, headers="keys", tablefmt="pipe")
+    with open(file_path, 'w') as file:
+        file.write(versions_list_in_markdown)
+        logger.info('Versions list Markdown file written successfully')
 
-data = generate_versions_data()
-render_versions_list(data)
+data = retrieve_versions_data()
+write_versions_list_markdown_file(data, 'stage/versions-list.md')
