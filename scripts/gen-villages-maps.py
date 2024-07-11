@@ -1,9 +1,14 @@
+from conflog import Conflog
 import matplotlib.image as img
 import matplotlib.pyplot as plt
 import numpy as np
 import yaml
 
+cfl = Conflog(conf_files=['./config/conflog.yaml'])
+logger = cfl.get_logger('gen-villages-maps')
+
 def generate_villages_map(title, data_file, output_file):
+    logger.info(f'Generating villages map for {title} ...')
 
     ax = plt.axes(projection='3d')
 
@@ -14,6 +19,7 @@ def generate_villages_map(title, data_file, output_file):
 
     with open(data_file) as file:
         try:
+            logger.info(f'Loading locations data from {data_file} ...')
             locations = yaml.safe_load(file)
         except yaml.YAMLError as e:
             print(e)
@@ -34,7 +40,11 @@ def generate_villages_map(title, data_file, output_file):
             fontsize=5
         )
 
+    logger.info(f'Creating villages map image at {output_file} ...')
     plt.savefig(output_file, dpi=500)
+    plt.close()
+
+    logger.info(f'Villages map for {title} generated successfully')
 
 generate_villages_map('Overworld Villages Map', 'data/locations-overworld.yaml', 'images/villages-map-overworld.png')
 generate_villages_map('Nether Villages Map', 'data/locations-nether.yaml', 'images/villages-map-nether.png')
