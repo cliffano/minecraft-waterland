@@ -7,11 +7,12 @@ We run Minecraft Waterland with Minecraft Java Edition with minimal customisatio
 
 ### server.properties
 
-We customise the following configuration properties. Everything else is per default.
+We customise the following configuration properties to make the play more fun for us. Everything else is per default.
 
 | Property | Value | Notes |
 |----------|-------|-------|
 | difficulty | peaceful/easy/normal/hard | Set to peaceful when building. Set to easy/normal/hard when adventuring. |
+| pvp | false | Disable friendly fire. |
 | motd | Welcome to Waterland | Message of the day. |
 
 ## Minecraft server host
