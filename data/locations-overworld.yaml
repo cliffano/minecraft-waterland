@@ -20,6 +20,11 @@ villages:
       x: -80
       y: 112
       z: -1529
+  - name: "Caveside Camp"
+    coords:
+      x: -1413
+      y: 71
+      z: -1731
   - name: "Deep Dark Biome"
     coords:
       x: 190
