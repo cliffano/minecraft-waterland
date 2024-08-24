@@ -5,7 +5,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: ./.github/actions/ci-action
+    - uses: actions/checkout@v4
+    - uses: iamsauravsharma/create-dotenv@v2.0.1
+      with:
+        file-path: '/tmp/.env'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: cliffano/command-docker-action@v1.1.0
+      with:
+        command: 'make ci'
+        env_file: '/tmp/.env'
