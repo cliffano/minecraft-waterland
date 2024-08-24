@@ -13,5 +13,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - uses: cliffano/command-docker-action@v1.1.0
       with:
+        image: cliffano/studio:1.15.0
         command: 'make ci'
         env_file: '/tmp/.env'
