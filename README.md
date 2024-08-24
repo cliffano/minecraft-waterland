@@ -1,6 +1,7 @@
 <img align="right" src="https://raw.github.com/cliffano/blocks/master/avatar.jpg" alt="Avatar"/>
 
 [![Build Status](https://github.com/cliffano/minecraft-waterland/workflows/CI/badge.svg)](https://github.com/cliffano/minecraft-waterland/actions?query=workflow%3ACI)
+[![Security Status](https://snyk.io/test/github/cliffano/minecraft-waterland/badge.svg)](https://snyk.io/test/github/cliffano/minecraft-waterland)
 
 ![Minecraft Waterland Logo](images/logo.png "Minecraft Waterland")
 
