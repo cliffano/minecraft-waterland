@@ -5,6 +5,11 @@ villages:
       x: 234
       y: 52
       z: -128
+  - name: "Nether Fortress Base"
+    coords:
+      x: -349
+      y: 60
+      z: -132
   - name: "Rock Fortress"
     coords:
       x: 472

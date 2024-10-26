@@ -50,6 +50,11 @@ villages:
       x: 160
       y: 70
       z: -435
+  - name: "Fort Iso"
+    coords:
+      x: -2897
+      y: 69
+      z: -1110
   - name: "Glowberry Cave Village"
     coords:
       x: -374
@@ -180,3 +185,8 @@ villages:
       x: -54
       y: 15
       z: 962
+  - name: "Waterland Village"
+    coords:
+      x: 80
+      y: 67
+      z: 391
