@@ -10,3 +10,4 @@ But when you're there, you have to adhere to the following rules:
 3. No stealing in the kingdom
 4. All discovered villages are under the protection of Waterland kingdom
 5. Only mine for resources outside of the kingdom's wall
+6. Music discs, tropical fishes, and armour trims can only be collected via adventures
