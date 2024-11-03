@@ -43,15 +43,20 @@ def retrieve_versions_data():
 
                     if (version_package_info.downloads.server is None):
                         logger.error(f'No server jar found for version {version.id} with package ID {package_id}')
-                        data.append({
-                            'Minecraft Version': version.id,
-                            'Server Jar Download URL': 'Not found'
-                        })
-                        continue
+                        server_jar_download_url = 'Not found'
+                    else:
+                        server_jar_download_url = version_package_info.downloads.server.url
+
+                    if (version_package_info.downloads.client is None):
+                        logger.error(f'No client jar found for version {version.id} with package ID {package_id}')
+                        client_jar_download_url = 'Not found'
+                    else:
+                        client_jar_download_url = version_package_info.downloads.client.url
 
                     data.append({
                         'Minecraft Version': version.id,
-                        'Server Jar Download URL': version_package_info.downloads.server.url
+                        'Server Jar Download URL': server_jar_download_url,
+                        'Client Jar Download URL': client_jar_download_url
                     })
 
                 except minecraftverse.exceptions.NotFoundException:
