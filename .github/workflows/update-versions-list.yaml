@@ -1,0 +1,20 @@
+---
+name: Update Versions List
+on: [workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        set-safe-directory: ${{ github.workspace }}
+    - uses: iamsauravsharma/create-dotenv@v2.0.1
+      with:
+        file-path: '/tmp/.env'
+      env:
+        GITHUB_TOKEN: ${{ secrets.STUDIO_GITHUB_TOKEN }}
+    - uses: cliffano/command-docker-action@v1.3.0
+      with:
+        image: cliffano/studio:2.9.0
+        command: 'gh gist edit 77a982a7503669c3e1acb0a0cf6127e9 -f minecraft-server-jar-downloads.md stage/versions-list.md'
+        env_file: '/tmp/.env'
