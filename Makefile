@@ -38,4 +38,7 @@ gen-villages-maps:
 gen-versions-list: stage
 	python3 scripts/gen-versions-list.py
 
-.PHONY: ci clean stage deps gen-villages-maps resource-packs resource-packs-package resource-packs-install-mac gen-versions-list
+update-versions-list-gist:
+	gh gist edit 77a982a7503669c3e1acb0a0cf6127e9 -f minecraft-server-jar-downloads.md stage/versions-list.md
+
+.PHONY: ci clean stage deps gen-villages-maps resource-packs resource-packs-package resource-packs-install-mac gen-versions-list update-versions-list-gist

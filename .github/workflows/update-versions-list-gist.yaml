@@ -1,5 +1,5 @@
 ---
-name: Update Versions List
+name: Update Versions List Gist
 on: [workflow_dispatch]
 jobs:
   build:
@@ -16,5 +16,5 @@ jobs:
     - uses: cliffano/command-docker-action@v1.3.0
       with:
         image: cliffano/studio:2.9.0
-        command: 'gh gist edit 77a982a7503669c3e1acb0a0cf6127e9 -f minecraft-server-jar-downloads.md stage/versions-list.md'
+        command: 'make deps gen-versions-list update-versions-list-gist'
         env_file: '/tmp/.env'
