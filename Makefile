@@ -14,6 +14,9 @@ deps:
 	python3 -m venv .venv
 	$(call python_venv,python3 -m pip install -r requirements.txt)
 
+deps-upgrade:
+	$(call python_venv,pip-compile --upgrade)
+
 resource-packs: resource-packs-package resource-packs-install-mac
 
 resource-packs-package: stage
@@ -46,4 +49,4 @@ gen-versions-list: stage
 update-versions-list-gist:
 	gh gist edit 77a982a7503669c3e1acb0a0cf6127e9 -f minecraft-server-jar-downloads.md stage/versions-list.md
 
-.PHONY: ci clean stage deps gen-villages-maps resource-packs resource-packs-package resource-packs-install-mac gen-versions-list update-versions-list-gist
+.PHONY: ci clean stage deps deps-upgrade gen-villages-maps resource-packs resource-packs-package resource-packs-install-mac gen-versions-list update-versions-list-gist
