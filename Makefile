@@ -6,8 +6,13 @@ clean:
 stage:
 	mkdir -p stage
 
+define python_venv
+	. .venv/bin/activate && $(1)
+endef
+
 deps:
-	pip3 install -r requirements.txt
+	python3 -m venv .venv
+	$(call python_venv,python3 -m pip install -r requirements.txt)
 
 resource-packs: resource-packs-package resource-packs-install-mac
 
@@ -33,10 +38,10 @@ resource-packs-install-mac:
 	cp -R stage/resource-packs/Waterland "/Users/$(USER)/Library/Application Support/minecraft/resourcepacks/"
 
 gen-villages-maps:
-	python3 scripts/gen-villages-maps.py
+	$(call python_venv,python3 scripts/gen-villages-maps.py)
 
 gen-versions-list: stage
-	python3 scripts/gen-versions-list.py
+	$(call python_venv,python3 scripts/gen-versions-list.py)
 
 update-versions-list-gist:
 	gh gist edit 77a982a7503669c3e1acb0a0cf6127e9 -f minecraft-server-jar-downloads.md stage/versions-list.md
