@@ -2,6 +2,7 @@ black
 conflog
 matplotlib
 minecraftverse
+pylint
 PyYAML
 tabulate
 yamllint

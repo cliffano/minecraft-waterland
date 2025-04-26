@@ -24,6 +24,7 @@ style:
 
 lint:
 	$(call python_venv,yamllint .github/workflows/*.yaml config/*.yaml data/*.yaml)
+	# $(call python_venv,pylint $(shell find scripts/ -type f -regex ".*\.py" | xargs echo))
 
 resource-packs: resource-packs-package resource-packs-install-mac
 
