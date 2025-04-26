@@ -19,6 +19,9 @@ deps-upgrade:
 	$(call python_venv,python3 -m pip install -r requirements-dev.txt)
 	$(call python_venv,pip-compile --upgrade)
 
+style:
+	$(call python_venv,black scripts/*.py)
+
 lint:
 	$(call python_venv,yamllint .github/workflows/*.yaml config/*.yaml data/*.yaml)
 
@@ -54,4 +57,4 @@ gen-versions-list: stage
 update-versions-list-gist:
 	gh gist edit 77a982a7503669c3e1acb0a0cf6127e9 -f minecraft-server-jar-downloads.md stage/versions-list.md
 
-.PHONY: ci clean stage deps deps-upgrade gen-villages-maps resource-packs resource-packs-package resource-packs-install-mac gen-versions-list update-versions-list-gist
+.PHONY: ci clean stage deps deps-upgrade style lint resource-packs resource-packs-package resource-packs-install-mac gen-villages-maps
