@@ -35,6 +35,11 @@ villages:
       x: -15
       y: 63
       z: -1678
+  - name: "Everest Village"
+    coords:
+      x: -531
+      y: 125
+      z: 147
   - name: "Farm Village"
     coords:
       x: 1447
