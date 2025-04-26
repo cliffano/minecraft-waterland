@@ -19,6 +19,9 @@ deps-upgrade:
 	$(call python_venv,python3 -m pip install -r requirements-dev.txt)
 	$(call python_venv,pip-compile --upgrade)
 
+lint:
+	$(call python_venv,yamllint .github/workflows/*.yaml config/*.yaml data/*.yaml)
+
 resource-packs: resource-packs-package resource-packs-install-mac
 
 resource-packs-package: stage
