@@ -5,20 +5,19 @@ from conflog import Conflog
 import minecraftverse
 from tabulate import tabulate
 
-cfl = Conflog(conf_files=['./config/conflog.yaml'])
-logger = cfl.get_logger('gen-versions-list')
+cfl = Conflog(conf_files=["./config/conflog.yaml"])
+logger = cfl.get_logger("gen-versions-list")
+
 
 def retrieve_versions_data():
-    logger.info('Retrieving versions data...')
+    logger.info("Retrieving versions data...")
 
     data = []
 
     launchermeta_conf = minecraftverse.Configuration(
-      host = 'https://launchermeta.mojang.com'
+        host="https://launchermeta.mojang.com"
     )
-    piston_conf = minecraftverse.Configuration(
-      host = 'https://piston-meta.mojang.com'
-    )
+    piston_conf = minecraftverse.Configuration(host="https://piston-meta.mojang.com")
 
     with minecraftverse.ApiClient(launchermeta_conf) as launchermeta_api_client:
 
@@ -26,7 +25,7 @@ def retrieve_versions_data():
 
         manifest = launchermeta_api.get_minecraft_version_manifest()
         for version in manifest.versions:
-            version_url_parts = version.url.split('/')
+            version_url_parts = version.url.split("/")
             package_id = version_url_parts[-2]
 
             with minecraftverse.ApiClient(piston_conf) as piston_api_client:
@@ -35,42 +34,62 @@ def retrieve_versions_data():
 
                 try:
 
-                    logger.info(f'Retrieving package info for version {version.id} with package ID {package_id} ...')
+                    logger.info(
+                        f"Retrieving package info for version {version.id} with package ID {package_id} ..."
+                    )
 
                     # version.id value is not URL encoded, we offload the encoding to the API client.
                     # For version that has spaces in the name, we must pass the non-URL-encoded value.
-                    version_package_info = piston_api.get_minecraft_version_package_info(package_id, version.id)
+                    version_package_info = (
+                        piston_api.get_minecraft_version_package_info(
+                            package_id, version.id
+                        )
+                    )
 
-                    if (version_package_info.downloads.server is None):
-                        logger.error(f'No server jar found for version {version.id} with package ID {package_id}')
-                        server_jar_download_url = 'Not found'
+                    if version_package_info.downloads.server is None:
+                        logger.error(
+                            f"No server jar found for version {version.id} with package ID {package_id}"
+                        )
+                        server_jar_download_url = "Not found"
                     else:
-                        server_jar_download_url = version_package_info.downloads.server.url
+                        server_jar_download_url = (
+                            version_package_info.downloads.server.url
+                        )
 
-                    if (version_package_info.downloads.client is None):
-                        logger.error(f'No client jar found for version {version.id} with package ID {package_id}')
-                        client_jar_download_url = 'Not found'
+                    if version_package_info.downloads.client is None:
+                        logger.error(
+                            f"No client jar found for version {version.id} with package ID {package_id}"
+                        )
+                        client_jar_download_url = "Not found"
                     else:
-                        client_jar_download_url = version_package_info.downloads.client.url
+                        client_jar_download_url = (
+                            version_package_info.downloads.client.url
+                        )
 
-                    data.append({
-                        'Minecraft Version': version.id,
-                        'Server Jar Download URL': server_jar_download_url,
-                        'Client Jar Download URL': client_jar_download_url
-                    })
+                    data.append(
+                        {
+                            "Minecraft Version": version.id,
+                            "Server Jar Download URL": server_jar_download_url,
+                            "Client Jar Download URL": client_jar_download_url,
+                        }
+                    )
 
                 except minecraftverse.exceptions.NotFoundException:
-                    logger.error(f'Unable to find package info for version {version.id} with package ID {package_id}')
+                    logger.error(
+                        f"Unable to find package info for version {version.id} with package ID {package_id}"
+                    )
 
-    logger.info('Versions data retrieved successfully')
+    logger.info("Versions data retrieved successfully")
     return data
 
+
 def write_versions_list_markdown_file(data, file_path):
-    logger.info(f'Writing versions list Markdown file at {file_path} ...')
+    logger.info(f"Writing versions list Markdown file at {file_path} ...")
     versions_list_in_markdown = tabulate(data, headers="keys", tablefmt="pipe")
-    with open(file_path, 'w') as file:
+    with open(file_path, "w") as file:
         file.write(versions_list_in_markdown)
-        logger.info('Versions list Markdown file written successfully')
+        logger.info("Versions list Markdown file written successfully")
+
 
 data = retrieve_versions_data()
-write_versions_list_markdown_file(data, 'stage/versions-list.md')
+write_versions_list_markdown_file(data, "stage/versions-list.md")
