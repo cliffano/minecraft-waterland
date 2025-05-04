@@ -1,4 +1,4 @@
-ci: deps gen-villages-maps resource-packs-package
+ci: deps lint gen-villages-maps resource-packs-package
 
 clean:
 	rm -rf stage
