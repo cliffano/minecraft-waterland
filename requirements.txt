@@ -30,7 +30,7 @@ matplotlib==3.10.1
     # via -r requirements.in
 mccabe==0.7.0
     # via pylint
-minecraftverse==1.0.0
+minecraftverse==1.1.0
     # via -r requirements.in
 mypy-extensions==1.1.0
     # via black
@@ -52,9 +52,9 @@ platformdirs==4.3.7
     # via
     #   black
     #   pylint
-pydantic==2.11.3
+pydantic==2.11.4
     # via minecraftverse
-pydantic-core==2.33.1
+pydantic-core==2.33.2
     # via pydantic
 pylint==3.3.6
     # via -r requirements.in
